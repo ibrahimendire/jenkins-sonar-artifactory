@@ -41,7 +41,7 @@ pipeline {
     }
     post{
         failure{
-            slackSend( channel: "#build-status", token: "slack-jenkins-secret-key token", color: "good", message: "${custom_msg()}")
+            slackSend( channel: "#ibrahim", token: "slack-jenkins-secret-key token", color: "good", message: "${custom_msg()}")
         }
      }
 }
