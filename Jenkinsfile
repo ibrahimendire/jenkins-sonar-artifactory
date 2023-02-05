@@ -42,21 +42,15 @@ pipeline {
     post{
         failure{
             
-  
-  success {
+            
+            slackSend( channel: "#ibrahim", token: "slack-jenkins-secret-key token", color: "danger", message: "Build Failed: ${env.BUILD_DISPLAY_NAME} (${env.BUILD_ID})")
+        }
+        success {
     slackSend(channel: "#ibrahim", 
               token: "slack-jenkins-secret-key token", 
               color: "good", 
               message: "Build Succeeded: ${env.BUILD_DISPLAY_NAME} (${env.BUILD_ID})")
   }
-
-
-            
-            
-            
-            
-            slackSend( channel: "#ibrahim", token: "slack-jenkins-secret-key token", color: "danger", message: "Build Failed: ${env.BUILD_DISPLAY_NAME} (${env.BUILD_ID})")
-        }
      }
 }
 
